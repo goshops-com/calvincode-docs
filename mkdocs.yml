@@ -39,7 +39,6 @@ theme:
   font:
     text: Inter
     code: Roboto Mono
-  logo: https://www.gopersonal.com/newlogo.svg
   favicon: assets/favicon.ico
 
 extra_css:
