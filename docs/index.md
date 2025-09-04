@@ -4,29 +4,13 @@ Welcome to the official documentation for **Calvin Code** - the AI-powered platf
 
 <div class="grid cards" markdown>
 
--   :material-puzzle:{ .lg .middle } **Connectors**
+-   :simple-googlecloud:{ .lg .middle } **BigQuery Connector**
 
     ---
 
-    Explore available connectors to integrate external services and databases with your Calvin Code applications.
+    Connect to Google Cloud BigQuery for large-scale data analytics and warehousing capabilities.
 
-    [:octicons-arrow-right-24: Browse Connectors](connectors/index.md)
-
--   :material-rocket-launch:{ .lg .middle } **Getting Started**
-
-    ---
-
-    Learn how to set up and start using Calvin Code for your e-commerce projects.
-
-    [:octicons-arrow-right-24: Get Started](getting-started/installation.md)
-
--   :material-api:{ .lg .middle } **API Reference**
-
-    ---
-
-    Complete API documentation for integrating with Calvin Code programmatically.
-
-    [:octicons-arrow-right-24: API Docs](api/index.md)
+    [:octicons-arrow-right-24: BigQuery Setup](connectors/bigquery.md)
 
 </div>
 
@@ -56,4 +40,4 @@ Our platform supports seamless integration with major e-commerce platforms:
 
 ---
 
-Ready to revolutionize your e-commerce development? [Schedule a personalized demo](https://www.gopersonal.com/es/contact) or explore our [connectors documentation](connectors/index.md) to get started.
+Ready to revolutionize your e-commerce development? [Schedule a personalized demo](https://www.gopersonal.com/es/contact) to get started.

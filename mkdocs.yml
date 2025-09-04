@@ -112,10 +112,5 @@ plugins:
 nav:
   - Home: index.md
   - Connectors:
-    - Overview: connectors/index.md
     - BigQuery: connectors/bigquery.md
-  - Getting Started:
-    - Installation: getting-started/installation.md
-    - Quick Start: getting-started/quickstart.md
-  - API Reference:
-    - Overview: api/index.md
+  - API Reference: api/index.md
