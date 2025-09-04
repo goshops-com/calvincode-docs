@@ -12,6 +12,14 @@ Welcome to the official documentation for **Calvin Code** - the AI-powered platf
 
     [:octicons-arrow-right-24: BigQuery Setup](connectors/bigquery.md)
 
+-   :simple-microsoft:{ .lg .middle } **Microsoft Clarity**
+
+    ---
+
+    Integrate with Microsoft Clarity Data Export API for web analytics and user behavior insights.
+
+    [:octicons-arrow-right-24: Clarity Setup](connectors/clarity.md)
+
 </div>
 
 ## What is Calvin Code?
