@@ -617,9 +617,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#essential-role" class="md-nav__link">
+  <a href="#recommended-roles-choose-one" class="md-nav__link">
     <span class="md-ellipsis">
-      Essential Role
+      Recommended Roles (Choose One)
     </span>
   </a>
   
@@ -878,8 +878,12 @@
 <ol>
 <li>In the <strong>Grant this service account access to project</strong> section:</li>
 <li>Click <strong>Select a role</strong></li>
-<li>Search for "BigQuery Admin"</li>
-<li>Select <strong>BigQuery Admin</strong> (<code>roles/bigquery.admin</code>)</li>
+<li>Choose one of the following roles based on your needs:<ul>
+<li>For read-only access: Search for "BigQuery Data Viewer" and select <strong>BigQuery Data Viewer</strong> (<code>roles/bigquery.dataViewer</code>)</li>
+<li>For query execution: Search for "BigQuery User" and select <strong>BigQuery User</strong> (<code>roles/bigquery.user</code>)</li>
+<li>For full admin access: Search for "BigQuery Admin" and select <strong>BigQuery Admin</strong> (<code>roles/bigquery.admin</code>)</li>
+</ul>
+</li>
 <li>Click <strong>CONTINUE</strong></li>
 <li>Skip the optional "Grant users access to this service account" section</li>
 <li>Click <strong>DONE</strong></li>
@@ -927,10 +931,22 @@
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Get your project ID</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nv">PROJECT_ID</span><span class="o">=</span><span class="k">$(</span>gcloud<span class="w"> </span>config<span class="w"> </span>get-value<span class="w"> </span>project<span class="k">)</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># Grant BigQuery Admin role to the service account</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>gcloud<span class="w"> </span>projects<span class="w"> </span>add-iam-policy-binding<span class="w"> </span><span class="nv">$PROJECT_ID</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span>--member<span class="o">=</span><span class="s2">&quot;serviceAccount:bigquery-mcp-service@</span><span class="nv">$PROJECT_ID</span><span class="s2">.iam.gserviceaccount.com&quot;</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span>--role<span class="o">=</span><span class="s2">&quot;roles/bigquery.admin&quot;</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># Choose one of the following based on your needs:</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="c1"># Option 1: Grant BigQuery Data Viewer role (read-only access)</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>gcloud<span class="w"> </span>projects<span class="w"> </span>add-iam-policy-binding<span class="w"> </span><span class="nv">$PROJECT_ID</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span>--member<span class="o">=</span><span class="s2">&quot;serviceAccount:bigquery-mcp-service@</span><span class="nv">$PROJECT_ID</span><span class="s2">.iam.gserviceaccount.com&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span>--role<span class="o">=</span><span class="s2">&quot;roles/bigquery.dataViewer&quot;</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="c1"># Option 2: Grant BigQuery User role (query execution)</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>gcloud<span class="w"> </span>projects<span class="w"> </span>add-iam-policy-binding<span class="w"> </span><span class="nv">$PROJECT_ID</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">    </span>--member<span class="o">=</span><span class="s2">&quot;serviceAccount:bigquery-mcp-service@</span><span class="nv">$PROJECT_ID</span><span class="s2">.iam.gserviceaccount.com&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">    </span>--role<span class="o">=</span><span class="s2">&quot;roles/bigquery.user&quot;</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="c1"># Option 3: Grant BigQuery Admin role (full admin access)</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>gcloud<span class="w"> </span>projects<span class="w"> </span>add-iam-policy-binding<span class="w"> </span><span class="nv">$PROJECT_ID</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">    </span>--member<span class="o">=</span><span class="s2">&quot;serviceAccount:bigquery-mcp-service@</span><span class="nv">$PROJECT_ID</span><span class="s2">.iam.gserviceaccount.com&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">    </span>--role<span class="o">=</span><span class="s2">&quot;roles/bigquery.admin&quot;</span>
 </span></code></pre></div>
 <h3 id="step-5-create-and-download-service-account-key_1">Step 5: Create and Download Service Account Key<a class="headerlink" href="#step-5-create-and-download-service-account-key_1" title="Permanent link">&para;</a></h3>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Create and download the service account key</span>
@@ -941,10 +957,13 @@
 </span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>ls<span class="w"> </span>-la<span class="w"> </span>bigquery-service-account.json
 </span></code></pre></div>
 <h2 id="required-permissions">Required Permissions<a class="headerlink" href="#required-permissions" title="Permanent link">&para;</a></h2>
-<p>The service account needs the following minimum permissions for BigQuery MCP:</p>
-<h3 id="essential-role">Essential Role<a class="headerlink" href="#essential-role" title="Permanent link">&para;</a></h3>
+<p>Configure the required roles and permissions to complete this task. You will need the <strong>BigQuery User</strong> role (<code>roles/bigquery.user</code>), the <strong>BigQuery Data Viewer</strong> role (<code>roles/bigquery.dataViewer</code>), or equivalent IAM permissions to connect to the instance.</p>
+<p>The service account needs one of the following permission configurations for BigQuery MCP:</p>
+<h3 id="recommended-roles-choose-one">Recommended Roles (Choose One)<a class="headerlink" href="#recommended-roles-choose-one" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>BigQuery Admin</strong> (<code>roles/bigquery.admin</code>) - Full access to BigQuery resources</li>
+<li><strong>BigQuery User</strong> (<code>roles/bigquery.user</code>) - Standard user access to run queries and jobs</li>
+<li><strong>BigQuery Data Viewer</strong> (<code>roles/bigquery.dataViewer</code>) - Read-only access to datasets and tables</li>
+<li><strong>BigQuery Admin</strong> (<code>roles/bigquery.admin</code>) - Full administrative access to BigQuery resources</li>
 </ul>
 <h3 id="alternative-granular-permissions-if-you-prefer-minimal-permissions">Alternative Granular Permissions (if you prefer minimal permissions)<a class="headerlink" href="#alternative-granular-permissions-if-you-prefer-minimal-permissions" title="Permanent link">&para;</a></h3>
 <p>Instead of BigQuery Admin, you can grant these specific permissions:

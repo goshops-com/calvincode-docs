@@ -49,8 +49,10 @@ This comprehensive guide shows you how to create a Google Cloud service account 
 
 1. In the **Grant this service account access to project** section:
    - Click **Select a role**
-   - Search for "BigQuery Admin"
-   - Select **BigQuery Admin** (`roles/bigquery.admin`)
+   - Choose one of the following roles based on your needs:
+     - For read-only access: Search for "BigQuery Data Viewer" and select **BigQuery Data Viewer** (`roles/bigquery.dataViewer`)
+     - For query execution: Search for "BigQuery User" and select **BigQuery User** (`roles/bigquery.user`)
+     - For full admin access: Search for "BigQuery Admin" and select **BigQuery Admin** (`roles/bigquery.admin`)
 2. Click **CONTINUE**
 3. Skip the optional "Grant users access to this service account" section
 4. Click **DONE**
@@ -109,7 +111,19 @@ gcloud iam service-accounts create bigquery-mcp-service \
 # Get your project ID
 PROJECT_ID=$(gcloud config get-value project)
 
-# Grant BigQuery Admin role to the service account
+# Choose one of the following based on your needs:
+
+# Option 1: Grant BigQuery Data Viewer role (read-only access)
+gcloud projects add-iam-policy-binding $PROJECT_ID \
+    --member="serviceAccount:bigquery-mcp-service@$PROJECT_ID.iam.gserviceaccount.com" \
+    --role="roles/bigquery.dataViewer"
+
+# Option 2: Grant BigQuery User role (query execution)
+gcloud projects add-iam-policy-binding $PROJECT_ID \
+    --member="serviceAccount:bigquery-mcp-service@$PROJECT_ID.iam.gserviceaccount.com" \
+    --role="roles/bigquery.user"
+
+# Option 3: Grant BigQuery Admin role (full admin access)
 gcloud projects add-iam-policy-binding $PROJECT_ID \
     --member="serviceAccount:bigquery-mcp-service@$PROJECT_ID.iam.gserviceaccount.com" \
     --role="roles/bigquery.admin"
@@ -128,10 +142,14 @@ ls -la bigquery-service-account.json
 
 ## Required Permissions
 
-The service account needs the following minimum permissions for BigQuery MCP:
+Configure the required roles and permissions to complete this task. You will need the **BigQuery User** role (`roles/bigquery.user`), the **BigQuery Data Viewer** role (`roles/bigquery.dataViewer`), or equivalent IAM permissions to connect to the instance.
 
-### Essential Role
-- **BigQuery Admin** (`roles/bigquery.admin`) - Full access to BigQuery resources
+The service account needs one of the following permission configurations for BigQuery MCP:
+
+### Recommended Roles (Choose One)
+- **BigQuery User** (`roles/bigquery.user`) - Standard user access to run queries and jobs
+- **BigQuery Data Viewer** (`roles/bigquery.dataViewer`) - Read-only access to datasets and tables
+- **BigQuery Admin** (`roles/bigquery.admin`) - Full administrative access to BigQuery resources
 
 ### Alternative Granular Permissions (if you prefer minimal permissions)
 Instead of BigQuery Admin, you can grant these specific permissions:
