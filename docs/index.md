@@ -10,7 +10,7 @@ Welcome to the official documentation for **Calvin Code** - the AI-powered platf
 
     Explore available connectors to integrate external services and databases with your Calvin Code applications.
 
-    [:octicons-arrow-right-24: Browse Connectors](connectors/)
+    [:octicons-arrow-right-24: Browse Connectors](connectors/index.md)
 
 -   :material-rocket-launch:{ .lg .middle } **Getting Started**
 
@@ -18,7 +18,7 @@ Welcome to the official documentation for **Calvin Code** - the AI-powered platf
 
     Learn how to set up and start using Calvin Code for your e-commerce projects.
 
-    [:octicons-arrow-right-24: Get Started](getting-started/)
+    [:octicons-arrow-right-24: Get Started](getting-started/installation.md)
 
 -   :material-api:{ .lg .middle } **API Reference**
 
@@ -26,7 +26,7 @@ Welcome to the official documentation for **Calvin Code** - the AI-powered platf
 
     Complete API documentation for integrating with Calvin Code programmatically.
 
-    [:octicons-arrow-right-24: API Docs](api/)
+    [:octicons-arrow-right-24: API Docs](api/index.md)
 
 </div>
 
@@ -56,4 +56,4 @@ Our platform supports seamless integration with major e-commerce platforms:
 
 ---
 
-Ready to revolutionize your e-commerce development? [Schedule a personalized demo](https://www.gopersonal.com/es/contact) or explore our [connectors documentation](connectors/) to get started.
+Ready to revolutionize your e-commerce development? [Schedule a personalized demo](https://www.gopersonal.com/es/contact) or explore our [connectors documentation](connectors/index.md) to get started.

@@ -224,7 +224,7 @@ Once your store is live:
 
 ### Need Help?
 
-- **Documentation**: Explore [Connectors](../connectors/) for integrations
+- **Documentation**: Explore [Connectors](../connectors/index.md) for integrations
 - **Support**: [Schedule a demo](https://www.gopersonal.com/es/contact) for assistance
 - **Community**: Join other Calvin Code users for tips and best practices
 

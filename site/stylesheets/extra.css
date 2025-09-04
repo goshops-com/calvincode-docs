@@ -1,0 +1,118 @@
+:root {
+  /* Calvin Code Brand Colors - extracted from calvin.gopersonal.com */
+  --md-primary-fg-color: #6202EE;
+  --md-primary-fg-color--light: #7C4DFF;
+  --md-primary-fg-color--dark: #4A148C;
+  --md-accent-fg-color: #6E51E0;
+  --md-accent-fg-color--transparent: rgba(110, 81, 224, 0.1);
+  
+  /* Custom Calvin gradients */
+  --calvin-gradient-primary: linear-gradient(135deg, #6202EE 0%, #6E51E0 100%);
+  --calvin-gradient-secondary: radial-gradient(circle at top right, rgba(120,40,200,0.15), transparent 80%);
+  
+  /* Light theme badge colors */
+  --calvin-badge-bg: #F3F0FF;
+  --calvin-badge-text: #6E51E0;
+  --calvin-badge-border: #E5E0FD;
+}
+
+[data-md-color-scheme="slate"] {
+  /* Dark theme overrides */
+  --md-primary-fg-color: #7C4DFF;
+  --md-accent-fg-color: #B388FF;
+}
+
+/* Calvin-style badges */
+.md-typeset .admonition.note,
+.md-typeset details.note {
+  border-color: var(--calvin-badge-border);
+}
+
+.md-typeset .admonition.note > .admonition-title,
+.md-typeset details.note > .admonition-title {
+  background-color: var(--calvin-badge-bg);
+  color: var(--calvin-badge-text);
+  border-color: var(--calvin-badge-border);
+}
+
+/* Custom card styling */
+.md-typeset .grid.cards > ol > li,
+.md-typeset .grid.cards > ul > li {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.md-typeset .grid.cards > ol > li:hover,
+.md-typeset .grid.cards > ul > li:hover {
+  border-color: var(--md-accent-fg-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Calvin gradient header */
+.md-hero {
+  background: var(--calvin-gradient-secondary);
+}
+
+/* Custom button styling */
+.md-button {
+  border-radius: 2rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.md-button--primary {
+  background: var(--calvin-gradient-primary);
+  border: none;
+}
+
+.md-button--primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(98, 2, 238, 0.3);
+}
+
+/* Code block styling */
+.md-typeset .highlight pre {
+  border-radius: 0.5rem;
+}
+
+/* Navigation styling */
+.md-nav__title {
+  font-weight: 600;
+}
+
+/* Custom spacing for cards */
+.md-typeset .grid.cards {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .md-typeset .grid.cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Logo and branding */
+.md-header__button.md-logo img {
+  height: 2rem;
+  width: auto;
+}
+
+/* Footer customization */
+.md-footer {
+  background: linear-gradient(135deg, var(--md-primary-fg-color) 0%, var(--md-primary-fg-color--dark) 100%);
+}
+
+/* Search highlighting */
+.md-search-result__meta {
+  color: var(--md-accent-fg-color);
+}
+
+/* Table of contents */
+.md-nav--secondary .md-nav__title {
+  color: var(--md-primary-fg-color);
+  font-weight: 600;
+}

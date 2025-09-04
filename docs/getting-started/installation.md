@@ -135,8 +135,8 @@ For production deployments:
 Once your connectors are configured:
 
 1. Explore the [Quick Start Guide](quickstart.md)
-2. Review [Connector Documentation](../connectors/)
-3. Try [Example Use Cases](quickstart.md#examples)
+2. Review [Connector Documentation](../connectors/index.md)
+3. Try [Example Use Cases](quickstart.md)
 
 ---
 
