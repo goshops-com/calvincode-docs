@@ -12,6 +12,14 @@ Welcome to the official documentation for **Calvin Code** - the AI-powered platf
 
     [:octicons-arrow-right-24: BigQuery Setup](connectors/bigquery.md)
 
+-   :simple-googleanalytics:{ .lg .middle } **Google Analytics 4**
+
+    ---
+
+    Simple GA4 integration through Calvin Code UI with Google account login and project selection.
+
+    [:octicons-arrow-right-24: GA4 Setup](connectors/google-analytics.md)
+
 -   :simple-microsoft:{ .lg .middle } **Microsoft Clarity**
 
     ---

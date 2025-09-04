@@ -112,5 +112,6 @@ nav:
   - Home: index.md
   - Connectors:
     - BigQuery: connectors/bigquery.md
+    - Google Analytics 4: connectors/google-analytics.md
     - Microsoft Clarity: connectors/clarity.md
   - API Reference: api/index.md
